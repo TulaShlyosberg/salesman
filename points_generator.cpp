@@ -1,4 +1,8 @@
-/*Реализация интрефейса генератора точек*/
+/*Р РµР°Р»РёР·Р°С†РёСЏ РёРЅС‚СЂРµС„РµР№СЃР° РіРµРЅРµСЂР°С‚РѕСЂР° С‚РѕС‡РµРє*/
+#pragma once
+#include<vector>
+#include<ctime>
+#include<cmath>
 #include "points_generator.h"
 
 point points_generator::Box_Muller() {
