@@ -1,14 +1,8 @@
 /*Интерфейс генератора экспериментов*/
-#pragma once
-#include "points_generator.h"
-#include "salesman_graph.h"
-#include "template_graph.h"
-#include<cmath>
-#include<iostream>
 
 class mst_salesman_experiment {
-	vector<double> average_quality;
-	vector<double> variation_const;
+	vector<double> average_quality;   //среднее качества приближения
+	vector<double> variation_const;   //среднекрвадратичное отклонение
 	vector<pair<int, int>> params;
 public:
 	mst_salesman_experiment();
