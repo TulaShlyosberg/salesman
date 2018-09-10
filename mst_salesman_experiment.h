@@ -1,4 +1,8 @@
 /*Интерфейс генератора экспериментов*/
+#pragma once
+#include<vector>
+#include<iostream>
+using namespace std;
 
 class mst_salesman_experiment {
 	vector<double> average_quality;   //среднее качества приближения
