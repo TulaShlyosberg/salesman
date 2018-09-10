@@ -1,4 +1,4 @@
-/*Интерфейс генератора экспериментов*/
+/*РРЅС‚РµСЂС„РµР№СЃ РіРµРЅРµСЂР°С‚РѕСЂР° СЌРєСЃРїРµСЂРёРјРµРЅС‚РѕРІ*/
 #pragma once
 #include "points_generator.h"
 #include "salesman_graph.h"
@@ -13,16 +13,16 @@ class mst_salesman_experiment {
 public:
 	mst_salesman_experiment();
 
-	//Делает iter_count экспериментов на points_count точках
+	//Р”РµР»Р°РµС‚ iter_count СЌРєСЃРїРµСЂРёРјРµРЅС‚РѕРІ РЅР° points_count С‚РѕС‡РєР°С…
 	void do_experiment(int points_count, int iter_count);
 
-	//Делает 20 экспериментов для всех точек в количестве из диапазона от begin_diap
-	//До end_diap включительно
+	//Р”РµР»Р°РµС‚ 20 СЌРєСЃРїРµСЂРёРјРµРЅС‚РѕРІ РґР»СЏ РІСЃРµС… С‚РѕС‡РµРє РІ РєРѕР»РёС‡РµСЃС‚РІРµ РёР· РґРёР°РїР°Р·РѕРЅР° РѕС‚ begin_diap
+	//Р”Рѕ end_diap РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
 	void do_plural_experiment(int begin_diap, int end_diap);
 
-	//Выводит данные эксперимента
+	//Р’С‹РІРѕРґРёС‚ РґР°РЅРЅС‹Рµ СЌРєСЃРїРµСЂРёРјРµРЅС‚Р°
 	friend ostream& operator<<(ostream& os, const mst_salesman_experiment& mse);
 
-	//Очищает данные всех предыдущих экспериментов
+	//РћС‡РёС‰Р°РµС‚ РґР°РЅРЅС‹Рµ РІСЃРµС… РїСЂРµРґС‹РґСѓС‰РёС… СЌРєСЃРїРµСЂРёРјРµРЅС‚РѕРІ
 	void clear_data();
 };
