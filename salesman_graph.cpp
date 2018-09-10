@@ -1,4 +1,10 @@
-/*Реализация класса графа из задачи коммивояжера*/
+/*Р РµР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР° РіСЂР°С„Р° РёР· Р·Р°РґР°С‡Рё РєРѕРјРјРёРІРѕСЏР¶РµСЂР°*/
+#pragma once
+#include<vector>
+#include<set>
+#include<algorithm>
+#include<cmath>
+#include<stack>
 #include "salesman_graph.h"
 
 salesman_graph::salesman_graph(const vector<point>& in_points) {
