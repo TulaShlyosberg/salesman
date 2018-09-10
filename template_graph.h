@@ -1,5 +1,5 @@
-/*Шаблонный класс ориенторированного графа, где вершинами являются элементы произвольного типа,
-у кторых есть оператор < (для использования map)*/
+/*РЁР°Р±Р»РѕРЅРЅС‹Р№ РєР»Р°СЃСЃ РѕСЂРёРµРЅС‚РѕСЂРёСЂРѕРІР°РЅРЅРѕРіРѕ РіСЂР°С„Р°, РіРґРµ РІРµСЂС€РёРЅР°РјРё СЏРІР»СЏСЋС‚СЃСЏ СЌР»РµРјРµРЅС‚С‹ РїСЂРѕРёР·РІРѕР»СЊРЅРѕРіРѕ С‚РёРїР°,
+Сѓ РєС‚РѕСЂС‹С… РµСЃС‚СЊ РѕРїРµСЂР°С‚РѕСЂ < (РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ map)*/
 #pragma once
 #include<vector>
 #include<map>
@@ -7,17 +7,17 @@ using namespace std;
 
 template<class vertex_type>
 class template_graph {
-	//словарь, сопоставляющий вершине ее номер
+	//СЃР»РѕРІР°СЂСЊ, СЃРѕРїРѕСЃС‚Р°РІР»СЏСЋС‰РёР№ РІРµСЂС€РёРЅРµ РµРµ РЅРѕРјРµСЂ
 	map<vertex_type, int> vertices_hash;
 
-	//вектор, связывающий номер вершины и ее саму
+	//РІРµРєС‚РѕСЂ, СЃРІСЏР·С‹РІР°СЋС‰РёР№ РЅРѕРјРµСЂ РІРµСЂС€РёРЅС‹ Рё РµРµ СЃР°РјСѓ
 	vector<vertex_type> vertices_number;
 
-	//списки смежности с вещественными весами
+	//СЃРїРёСЃРєРё СЃРјРµР¶РЅРѕСЃС‚Рё СЃ РІРµС‰РµСЃС‚РІРµРЅРЅС‹РјРё РІРµСЃР°РјРё
 	vector<vector<pair<int, float>>> edges;
 public:
 
-	//конструткор по списку вершин
+	//РєРѕРЅСЃС‚СЂСѓС‚РєРѕСЂ РїРѕ СЃРїРёСЃРєСѓ РІРµСЂС€РёРЅ
 	template_graph(const vector<vertex_type>& vertices) {
 		vertices_number = vertices;
 		for (int i = 0; i < vertices.size(); i++)
@@ -25,12 +25,12 @@ public:
 		edges.resize(vertices.size());
 	}
 
-	//процедура, создающая ребро из from в to весом cost
+	//РїСЂРѕС†РµРґСѓСЂР°, СЃРѕР·РґР°СЋС‰Р°СЏ СЂРµР±СЂРѕ РёР· from РІ to РІРµСЃРѕРј cost
 	void set_edge(vertex_type from, vertex_type to, float cost) {
 		edges[vertices_hash[from]].push_back({ vertices_hash[to], cost });
 	}
 
-	//возвращает массив потомков данной вершины
+	//РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ РїРѕС‚РѕРјРєРѕРІ РґР°РЅРЅРѕР№ РІРµСЂС€РёРЅС‹
 	vector<pair<vertex_type, float>> adjacent(vertex_type parent) {
 		hash = vertices_hash[parent];
 		vector<vertex_type> result(edges[hash].size());
@@ -41,12 +41,12 @@ public:
 		return result;
 	}
 
-	//возвращает количество вершин
+	//РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРµСЂС€РёРЅ
 	int size() const {
 		return vertices_number.size();
 	}
 
-	//возвращает суммарный вес ребер графа
+	//РІРѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјР°СЂРЅС‹Р№ РІРµСЃ СЂРµР±РµСЂ РіСЂР°С„Р°
 	double weight() const {
 		double result = 0;
 		for (auto out_edges : edges)
@@ -55,14 +55,14 @@ public:
 		return result;
 	}
 
-	//конструктор копирования
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	template_graph(const template_graph& c_tg) {
 		edges = c_tg.edges;
 		vertices_hash = c_tg.vertices_hash;
 		vertices_number = c_tg.vertices_number;
 	}
 
-	//оператор присваивания
+	//РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 	template_graph& operator==(const template_graph& c_tg) {
 		edges = c_tg.edges;
 		vertices_hash = c_tg.vertices_hash;
