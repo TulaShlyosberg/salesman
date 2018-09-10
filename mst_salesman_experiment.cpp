@@ -1,4 +1,11 @@
+#pragma once
 #include "mst_salesman_experiment.h"
+#include "points_generator.h"
+#include "salesman_graph.h"
+#include "template_graph.h"
+#include<cmath>
+#include<iostream>
+
 
 mst_salesman_experiment::mst_salesman_experiment(){}
 void mst_salesman_experiment::do_experiment(int points_count, int iter_count) {
