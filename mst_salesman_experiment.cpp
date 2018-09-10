@@ -4,7 +4,6 @@
 #include "salesman_graph.h"
 #include "template_graph.h"
 #include<cmath>
-#include<iostream>
 
 
 mst_salesman_experiment::mst_salesman_experiment(){}
